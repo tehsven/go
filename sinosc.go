@@ -12,6 +12,8 @@ import (
 const tao = 2 * math.Pi
 const sampleRate = 44100.0
 const framesPerBuffer = 256.0
+const outputChannels = 2
+const outBufSize = outputChannels * framesPerBuffer
 
 var freq = 0.0
 var duration = 0.0
@@ -31,7 +33,7 @@ func main() {
 	portaudio.Initialize()
 	stream, err := portaudio.OpenDefaultStream(
 		0,
-		2,
+		outputChannels,
 		sampleRate,
 		256,
 		audioCallback)
@@ -59,10 +61,11 @@ func audioCallback(
 	timeInfo portaudio.StreamCallbackTimeInfo,
 	flags portaudio.StreamCallbackFlags) {
 	
-	for i := 0; i < 2*framesPerBuffer; i+=2 {
+	for i := 0; i < outBufSize; i+=outputChannels {
 		y := float32(math.Sin(x))
 		x += interval
-		out[i] = y
-		out[i+1] = y
+		for j := 0; j < outputChannels; j++ {
+			out[i+j] = y
+		}
 	}
 }
