@@ -59,10 +59,10 @@ func audioCallback(
 	timeInfo portaudio.StreamCallbackTimeInfo,
 	flags portaudio.StreamCallbackFlags) {
 	
-	for i := 0.0; i < framesPerBuffer; i++ {
+	for i := 0; i < 2*framesPerBuffer; i+=2 {
 		y := float32(math.Sin(x))
 		x += interval
-		out[int(i*2)] = y
-		out[int(i*2+1)] = y
+		out[i] = y
+		out[i+1] = y
 	}
 }
