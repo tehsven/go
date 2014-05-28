@@ -1,0 +1,15 @@
+data/portaudio/pa.h.i
+data/portaudio/Makefile.i
+data/portaudio/cmd/Makefile.i
+data/portaudio/examples/play.go.i
+data/portaudio/README.i
+data/portaudio/examples/record.go.i
+data/portaudio/pa.c.i
+data/.hgignore.i
+data/portaudio/examples/stereoSine.go.i
+data/portaudio/examples/echo.go.i
+data/portaudio/cmd/echo.go.i
+data/portaudio/examples/enumerate.go.i
+data/portaudio/cmd/noise.go.i
+data/portaudio/examples/noise.go.i
+data/portaudio/portaudio.go.i

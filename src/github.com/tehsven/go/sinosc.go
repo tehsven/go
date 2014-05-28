@@ -1,4 +1,4 @@
-package main
+package sinosc
 
 import (
 	"log"
@@ -19,7 +19,7 @@ var freq = 0.0
 var duration = 0.0
 var interval = 0.0
 
-func main() {
+func sinwave() {
 	freq, err := strconv.ParseFloat(os.Args[1], 64)
 	if err != nil {
 		log.Fatal("invalid input arg: ", err)

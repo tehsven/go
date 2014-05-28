@@ -1,3 +1,8 @@
+# os
+*.DS_Store
+
 # portaudio
-src
-pkg
+portaudio-go
+
+# go
+_obj
